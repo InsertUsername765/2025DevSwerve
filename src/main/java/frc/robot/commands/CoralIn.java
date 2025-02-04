@@ -7,6 +7,8 @@ package frc.robot.commands;
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+// This is where the CoralIn command is clarified
+
 /** An Intake command that uses an Intake subsystem. */
 public class CoralIn extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})

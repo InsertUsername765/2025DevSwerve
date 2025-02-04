@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.generated.Constants.CageSubsystemConstants;
 
+// This is where all the commands related to the Cage are created
+
 public class CageSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
 

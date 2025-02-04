@@ -7,6 +7,8 @@ package frc.robot.commands;
 import frc.robot.subsystems.CageSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+// This is where the CageUp command is clarified
+
 /** An example command that uses an example subsystem. */
 public class CageUp extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})

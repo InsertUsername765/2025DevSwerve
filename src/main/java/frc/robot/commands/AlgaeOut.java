@@ -8,6 +8,8 @@ package frc.robot.commands;
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+// This is where the AlgaeOut command is clarified
+
 /** An example command that uses an example subsystem. */
 public class AlgaeOut extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})

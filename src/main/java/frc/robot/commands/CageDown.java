@@ -7,6 +7,8 @@ package frc.robot.commands;
 import frc.robot.subsystems.CageSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+// This is where the CageDown command is clarifieds
+
 /** An example command that uses an example subsystem. */
 public class CageDown extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})

@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.generated.Constants.LiftSubsystemConstants;
 
+// This is where all the commands related to the Lift are created
+
 public class LiftSubsystem extends SubsystemBase{
      private TalonFX lift1, lift2;
      //private double oneTop, oneBottom;
