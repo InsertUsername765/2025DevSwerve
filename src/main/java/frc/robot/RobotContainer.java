@@ -16,8 +16,14 @@ package frc.robot;
 import edu.wpi.first.wpilibj2.command.Command;
 //import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.commands.AlgaeIn;
-import frc.robot.commands.AlgaeOut;
+import frc.robot.commands.TopAlgaeIn;
+import frc.robot.commands.TopAlgaeOut;
+import frc.robot.commands.TopIntakeAngleFeed;
+import frc.robot.commands.TopIntakeAngleShoot;
+import frc.robot.commands.BottomAlgaeIn;
+import frc.robot.commands.BottomAlgaeIntakeIn;
+import frc.robot.commands.BottomAlgaeIntakeOut;
+import frc.robot.commands.BottomAlgaeOut;
 import frc.robot.commands.CageDown;
 import frc.robot.commands.CageUp;
 import frc.robot.commands.CoralIn;
@@ -84,17 +90,28 @@ public class RobotContainer {
         //     )
         // );
          //oystick.b().onTrue(new Command((x) -> System.out.println("B button Pressed") ));
+
+        // The Lift
         joystick.rightBumper().whileTrue(new LiftUp(lift));
         joystick.leftBumper().whileTrue(new LiftDown(lift));
-
+        // Coral Intake
         joystick.b().whileTrue(new CoralIn(intake));
-        joystick.a().whileTrue(new CoralOut(intake));
-
-        joystick.y().whileTrue(new AlgaeIn(intake));
-        joystick.x().whileTrue(new AlgaeOut(intake));
-
+        joystick.a().whileTrue(new CoralOut(intake));        
+        // Top Algea Intake
+        joystick.y().whileTrue(new TopAlgaeIn(intake));
+        joystick.x().whileTrue(new TopAlgaeOut(intake));
+        joystick.povDownLeft().whileTrue(new TopIntakeAngleFeed(intake));
+        joystick.povDownRight().whileTrue(new TopIntakeAngleShoot(intake));
+        // Bottom Algea Intake
+        joystick.povLeft().whileTrue(new BottomAlgaeIn(intake));
+        joystick.povRight().whileTrue(new BottomAlgaeOut(intake));
+        joystick.povUpLeft().whileTrue(new BottomAlgaeIntakeOut(intake));
+        joystick.povUpRight().whileTrue(new BottomAlgaeIntakeIn(intake));
+        
+        // The Cage
         joystick.povUp().whileTrue(new CageUp(cage));
         joystick.povDown().whileTrue(new CageDown(cage));
+
         // joystick.a().whileTrue(drivetrain.applyRequest(() -> brake));
         // joystick.b().whileTrue(drivetrain.applyRequest(() ->
         //     point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))

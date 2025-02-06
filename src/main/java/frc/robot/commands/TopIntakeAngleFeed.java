@@ -4,24 +4,23 @@
 
 package frc.robot.commands;
 
-
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
-// This is where the AlgaeOut command is clarified
+// This is where the AlgaeIn command is clarified 
 
 /** An example command that uses an example subsystem. */
-public class AlgaeOut extends Command {
+public class TopIntakeAngleFeed extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final IntakeSubsystem intakeSubsystem;
+  private final IntakeSubsystem intakesubsystem;
 
   /**
-   * Creates a new ExampleCommand.
+   * Creates a new AlgaeIn.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public AlgaeOut(IntakeSubsystem subsystem) {
-    intakeSubsystem = subsystem;
+  public TopIntakeAngleFeed(IntakeSubsystem subsystem) {
+    intakesubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -33,13 +32,13 @@ public class AlgaeOut extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intakeSubsystem.algaeOut();
+    intakesubsystem.topIntakeAngleFeed();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    intakeSubsystem.algaeStop();
+    intakesubsystem.topIntakeAngleNeutral();
   }
 
   // Returns true when the command should end.

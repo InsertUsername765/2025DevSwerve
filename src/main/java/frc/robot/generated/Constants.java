@@ -16,13 +16,18 @@ public class Constants {
     public static final int coralIntake = 11;
     public static final String coralIntakeCan = RioCanBus;
 
-    public static final int algaeIntake = 12;
-    public static final String algaeIntakeCan = RioCanBus;
+    public static final int topAlgaeIntake = 12;
+    public static final String topAlgaeIntakeCan = RioCanBus;
         
+    public static final int bottomAlgeaIntake = 13;
+    public static final String bottomAlgeaIntakeCAN = RioCanBus;
+
+    public static final int bottomAlgeaIntakeSetter = 14;
+    public static final String bottomAlgeaIntakeSetterCAN = RioCanBus;
     }
 
     public static class CageSubsystemConstants {
-    public static final int cageMotor = 13;
+    public static final int cageMotor = 15;
     public static final String cageMotorCAN = RioCanBus;    
     }
 }

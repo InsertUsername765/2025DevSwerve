@@ -15,11 +15,13 @@ import frc.robot.generated.Constants.IntakeSubsystemConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  private TalonFX coralIntake, algaeIntake;
+  private TalonFX coralIntake, topAlgaeIntake, topIntakeAngle, bottomAlgeaIntake, bottomAlgeaIntakeSetter;
  
   public IntakeSubsystem() {
     coralIntake = new TalonFX(IntakeSubsystemConstants.coralIntake);
-    algaeIntake = new TalonFX(IntakeSubsystemConstants.algaeIntake);
+    topAlgaeIntake = new TalonFX(IntakeSubsystemConstants.topAlgaeIntake);
+    bottomAlgeaIntake = new TalonFX (IntakeSubsystemConstants.bottomAlgeaIntake);
+    bottomAlgeaIntakeSetter = new TalonFX(IntakeSubsystemConstants.bottomAlgeaIntakeSetter);
   }
 
   public void coralStop(){
@@ -34,19 +36,53 @@ public class IntakeSubsystem extends SubsystemBase {
     coralIntake.setControl(new DutyCycleOut(-.2));//TBD
   }
 
-  public void algaeStop(){
-    algaeIntake.setControl(new DutyCycleOut(0));
+  public void topAlgaeStop(){
+    topAlgaeIntake.setControl(new DutyCycleOut(0));
   }
 
-  public void algaeIn(){
-    algaeIntake.setControl(new DutyCycleOut(.2));//TBD
+  public void topAgaeIn(){
+    topAlgaeIntake.setControl(new DutyCycleOut(.2));//TBD
   }
 
-  public void algaeOut(){
-    algaeIntake.setControl(new DutyCycleOut(-.2));//TBD
+  public void topAlgaeOut(){
+    topAlgaeIntake.setControl(new DutyCycleOut(-.2));//TBD
   }
 
+  public void topIntakeAngleFeed(){
+    topIntakeAngle.setControl(new DutyCycleOut(-.2));
+  }
 
+  public void topIntakeAngleShoot(){
+    topIntakeAngle.setControl(new DutyCycleOut(.2));//TBD
+  }
+
+  public void topIntakeAngleNeutral(){
+    topIntakeAngle.setControl(new DutyCycleOut(0));//TBD
+  }
+
+  public void bottomAlgaeStop(){
+    bottomAlgeaIntake.setControl(new DutyCycleOut(0));
+  }
+
+  public void bottomAlgaeIn(){
+    bottomAlgeaIntake.setControl(new DutyCycleOut(.2));//TBD
+  }
+
+  public void bottomAlgaeOut(){
+    bottomAlgeaIntake.setControl(new DutyCycleOut(-.2));//TBD
+  }
+
+  public void bottomAlgaeIntakeStop(){
+    bottomAlgeaIntakeSetter.setControl(new DutyCycleOut(0));
+  }
+
+  public void bottomAlgaeIntakeOut(){
+    bottomAlgeaIntakeSetter.setControl(new DutyCycleOut(.2));//TBD
+  }
+
+  public void bottomAlgaeIntakeIn(){
+     bottomAlgeaIntakeSetter.setControl(new DutyCycleOut(-.2));//TBD
+  }
 
   /**
    * Example command factory method.
